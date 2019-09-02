@@ -2,26 +2,16 @@
 {% block content %}
 
 <p>Select your image file</p>
-
 <form method=post enctype=multipart/form-data>
     <input type=file name=file>
     <input type=submit value=Upload style="background-color: yellow">
 </form>
 
 {% if result_data %}
-<br>
-<hr>
-<p>Uploaded file: {{filename}}</p>
-<p>Result: {{result_data}}</p>
-
-<img src="{{pushed_img_path}}">
-
+    <br>
+    <hr>
+    <p>Uploaded file: {{filename}}</p>
+    <p>Result: {{result_data}}</p>
+    <img src="{{pushed_img_path}}">
 {% endif %}
-
-
-
-
-
-
 {% endblock %}
-
