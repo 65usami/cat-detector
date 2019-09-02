@@ -1,4 +1,3 @@
-
 from flickrapi import FlickrAPI
 from urllib.request import urlretrieve
 from pprint import pprint
@@ -13,15 +12,17 @@ secret = "a104178e860782ff"
 animalname = sys.argv[1]
 savedir = "./" + animalname
 
+
 def pull_data(photos):
     for i, photo in enumerate(photos['photo']):
         url_q = photo['url_q']
         filepath = savedir + '/' + photo['id'] + '.jpg'
         if os.path.exists(filepath):
             continue
-        urlretrieve(url_q,filepath)
+        urlretrieve(url_q, filepath)
         time.sleep(1.2)
         print(photo)
+
 
 flickr = FlickrAPI(key, secret, format='parsed-json')
 # pages = 10
@@ -38,16 +39,12 @@ flickr = FlickrAPI(key, secret, format='parsed-json')
 #     photos = result['photos']
 #     pull_data(photos)
 
-result = flickr.photos.search(
-    text = animalname,
-    per_page = 500,
-    page = 1,
-    media = 'photos',
-    sort = 'relevance',
-    safe_search = 1,
-     extras = 'url_q, licence'
-)
+result = flickr.photos.search(text=animalname,
+                              per_page=500,
+                              page=1,
+                              media='photos',
+                              sort='relevance',
+                              safe_search=1,
+                              extras='url_q, licence')
 photos = result['photos']
 pull_data(photos)
-
-

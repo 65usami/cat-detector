@@ -2,9 +2,11 @@ from keras.models import Sequential, load_model
 from keras.layers import Conv2D, MaxPooling2D
 from keras.layers import Activation, Dropout, Flatten, Dense
 from keras import backend as keras_backend
-import keras,sys
+import keras
+import sys
 import numpy as np
 from PIL import Image
+
 
 def cat(img_file, h5_file):
     classes = ["cat", "monkey", "bird", "dog"]

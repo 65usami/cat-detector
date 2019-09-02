@@ -14,7 +14,7 @@ X = []
 Y = []
 for index, classlabel in enumerate(classes):
     print(index, classlabel)
-    photos_dir = "./" + classes_header + '/' +classlabel
+    photos_dir = "./" + classes_header + '/' + classlabel
     files = glob.glob(photos_dir + "/*.jpg")
     for i, file in enumerate(files):
         #if i >= 200: break
