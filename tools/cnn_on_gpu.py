@@ -55,14 +55,14 @@ def model_train(X_train, y_train, X_test, y_test):
     model.add(Dense(num_classes))
     model.add(BatchNormalization())
     model.add(Activation('softmax'))
-    opt = keras.optimizers.adam(lr=0.0001, decay=1e-6)
+    opt = keras.optimizers.adam(lr=0.0001)
     model.compile(loss='categorical_crossentropy',
                   optimizer=opt,
                   metrics=['accuracy'])
 
     model.fit(X_train,
               y_train,
-              batch_size=80,
+              batch_size=150,
               epochs=3000,
               verbose=True,
               validation_data=(X_test, y_test),
