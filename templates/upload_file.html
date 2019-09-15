@@ -1,17 +1,25 @@
 {% extends "layout.html" %}
 {% block content %}
 
-<p>Select your image file</p>
+<br>
+<br>
+<h2>Choose your cat</h2>
+<br>
 <form method=post enctype=multipart/form-data>
-    <input type=file name=file>
-    <input type=submit value=Upload style="background-color: yellow">
+    <input type="file" name="file">
+    <br>
+    <br>
+    <br>
+    <button type="submit" class="btn btn-warning">Upload</button>
 </form>
 
 {% if result_data %}
     <br>
     <hr>
-    <p>Uploaded file: {{filename}}</p>
-    <p>Result: {{result_data}}</p>
-    <img src="{{pushed_img_path}}">
+    <p class="h4">Uploaded file: {{filename}}</p>
+    <br>
+    <p class="h4">{{result_data}}</p>
+    <img src="{{pushed_img_path}}" class="img-thumbnail">
 {% endif %}
+
 {% endblock %}
