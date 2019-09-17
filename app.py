@@ -10,7 +10,6 @@ STATIC_PUSHED_DATA_PATH = '/static/pushed_data'
 UPLOAD_FOLDER = app.root_path + STATIC_PUSHED_DATA_PATH
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
@@ -36,3 +35,6 @@ def upload_file():
     filename = request.args.get('filename')
     pushed_img_path = request.args.get('pushed_img_path')
     return render_template('upload_file.html', title='upload_file', filename=filename, result_data=result_data, pushed_img_path=pushed_img_path)
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0')
