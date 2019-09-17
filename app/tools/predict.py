@@ -6,12 +6,11 @@ import numpy as np
 from PIL import Image
 import img_classess
 
-classes = img_classess.get_classes()
 
-
-def main():
+def main(image_file_path):
+    classes = img_classess.get_classes()
     image_size = 50
-    image = Image.open(sys.argv[1])
+    image = Image.open(image_file_path)
     image = image.convert('RGB')
     image = image.resize((image_size, image_size))
     data = np.asarray(image) / 255
@@ -29,4 +28,5 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    image_file_path = sys.argv[1]
+    main(image_file_path)
