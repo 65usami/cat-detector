@@ -2,7 +2,7 @@
 
 ## Feature
 
-Show possibiloty of your picture whether a cat by AI.
+Show possibility of your picture whether a cat by AI.
 
 ## Demo
 
