@@ -5,7 +5,8 @@ __pycache__/
 .python-version
 .vscode/
 app/tools/imgs/
-app/static/pushed_data/
+app/static/pushed_data/*
+!app/static/pushed_data/.gitkeep
 
 # C extensions
 *.so
