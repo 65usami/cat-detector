@@ -17,7 +17,7 @@ http://52.193.167.222/
 - Nginx + uWSGI + Flask
 - TensorFlow + Keras
 
-# Installation
+## Installation
 ```
 # Docker installation
 $ sudo apt-get update
@@ -40,7 +40,7 @@ $ sudo chmod +x /usr/local/bin/docker-compose
 $ exit
 ```
 
-# Usage
+## Usage
 ```
 $ docker-compose up -d
 ```
