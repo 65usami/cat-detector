@@ -6,7 +6,7 @@ Show possibility of your picture whether a cat by AI.
 
 ## Demo
 
-http://52.193.167.222/
+http://usa-mi.work/
 
 ## System
 
