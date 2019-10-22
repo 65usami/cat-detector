@@ -17,8 +17,11 @@
     <hr>
     <p class="h4">Uploaded file: {{filename}}</p>
     <br>
-    <p class="h4">{{result_data}}</p>
-    <img src="{{pushed_img_path}}" class="img-thumbnail">
+
+    <div class="container">
+        <h2>{{result_data}}</h2>
+        <img src="{{pushed_img_path}}" class="img-fluid" style="max-width: 640; height: auto;">
+    </div>
 {% endif %}
 
 {% endblock %}
