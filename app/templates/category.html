@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<br>
+<h2>会社分類器</h2>
+<br>
+<form method=post action="/category">
+    <p>会社名、電話番号、住所などを入力してみてください</p>
+    <input type="text" name="data" placeholder="株式会社ABC">
+    <br>
+    <br>
+    <button type="submit" class="btn btn-warning">Check</button>
+</form>
+
+{% if result_data %}
+    <hr>
+    <br>
+    <h2>{{result_data}}</h2>
+{% endif %}
+
+{% endblock %}

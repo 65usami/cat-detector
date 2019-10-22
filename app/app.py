@@ -2,6 +2,7 @@ import os
 from flask import Flask, flash, request, redirect, url_for, render_template
 from werkzeug.utils import secure_filename
 import apps.predict as predict
+import apps.predict_category as predict_category
 import apps.file_checker as file_checker
 
 app = Flask(__name__)
@@ -35,6 +36,15 @@ def upload_file():
     filename = request.args.get('filename')
     pushed_img_path = request.args.get('pushed_img_path')
     return render_template('upload_file.html', title='upload_file', filename=filename, result_data=result_data, pushed_img_path=pushed_img_path)
+
+@app.route('/category', methods=['GET', 'POST'])
+def category():
+    result_data = None
+    if request.method == 'POST':
+        name = request.form['data']
+        result_data = predict_category.category(name, app.root_path)
+    return render_template('category.html', result_data=result_data)
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
